@@ -65,7 +65,7 @@ You can now test the script with the **Test Run** tab at the top of the window. 
 Vertically expand the Script Editor window to expose the **Save** button and press it.
 
 ### Customizing email
-You can customize the `sendmail.sh` to change the contents of the email to your liking.
+You can customize the `sendmail.sh` file to change the contents of the email to your liking.
 
 ### Troubleshooting
 If the email fails to appear, ensure your msmtp credentials are correct and you included the recipient address inside of `sendmail.sh`.
