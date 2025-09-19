@@ -15,7 +15,7 @@ When the package is finished inside of JDownloader, it calls `sendmail` and pass
 ### Download Files
 Download `sendmail.sh` and `setup-msmtp.sh` from this repo and place them in the same directory as your `docker-compose.yml` file. Run `chmod +x` on each to ensure they can be run.
 
-Enter the `sendmail` script and replace the **RECIPIENT** variable with the email address of your intended recipient.
+Enter the `sendmail` script and change the `RECIPIENT=` variable with the email address of your intended recipient.
 
 ### Configure msmtprc file
 So your container knows what to use for msmtprc, you need to make a file that passes through the information you need to use.
