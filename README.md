@@ -23,10 +23,10 @@ So your container knows what to use for msmtprc, you need to make a file that pa
 Download the example `msmtprc` file from this repo and place it in the same directory as the other files, then fill it out with the information you need for your client:
 
 `
-account default
-host mail.yourhost.com
-port 587
-from sender@yourhost.com
+account default <br>
+host mail.yourhost.com <br>
+port 587 <br>
+from sender@yourhost.com <br>
 auth on
 user sender@yourhost.com
 password secure-password
