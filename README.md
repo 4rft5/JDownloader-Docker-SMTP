@@ -22,25 +22,27 @@ So your container knows what to use for msmtprc, you need to make a file that pa
 
 Download the example `msmtprc` file from this repo and place it in the same directory as the other files, then fill it out with the information you need for your client:
 
-`account default`
-`host mail.yourhost.com`
-`port 587`
-`from sender@yourhost.com`
-`auth on`
-`user sender@yourhost.com`
-`password secure-password`
-`tls on`
-`tls_trust_file /etc/ssl/certs/ca-certificates.crt`
-`logfile /tmp/msmtp-test.log`
-
+```
+account default
+host mail.yourhost.com
+port 587
+from sender@yourhost.com
+auth on
+user sender@yourhost.com
+password secure-password
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile /tmp/msmtp-test.log
+```
 
 ### Configure docker-compose.yml
 To add msmtp functionality, you need to add the following lines in your compose file's **volumes** section:
 
-`      - "./setup-msmtp.sh:/etc/cont-init.d/99-setup-msmtp.sh:ro"`
-`      - "./sendmail.sh:/usr/local/bin/sendmail.sh"`
-`      - "./msmtprc:/etc/msmtprc:ro"`
-
+```
+      - "./setup-msmtp.sh:/etc/cont-init.d/99-setup-msmtp.sh:ro"
+      - "./sendmail.sh:/usr/local/bin/sendmail.sh"
+      - "./msmtprc:/etc/msmtprc:ro"
+```
 
 ### Configuring JDownloader
 Navigate to your JDownloader container's address and enter **Settings** then **Extension Modules**.
@@ -51,10 +53,12 @@ Enter Event Scripter and click **Add**. You can click to enter a name, and set t
 
 Inside of the Script Editor, enter the following:
 
-`var name = package.getName();`
-`var path = package.getDownloadFoler();`
-`var message = name + "\n" path;`
-`callAsync(function(){},"/usr/local/bin/sendmail.sh",[message]);`
+```
+var name = package.getName();
+var path = package.getDownloadFoler();
+var message = name + "\n" path;
+callAsync(function(){},"/usr/local/bin/sendmail.sh",[message]);
+```
 
 You can now test the script with the **Test Run** tab at the top of the window. If the `msmtp` file was configured correctly, the alert will be sent to the configured inbox.
 
