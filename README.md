@@ -36,7 +36,7 @@ logfile /tmp/msmtp-test.log
 ```
 
 ### Configure docker-compose.yml
-To add msmtp functionality, you need to add the following lines in your compose file's **volumes** section:
+To add msmtp functionality, you need to add the files in your compose file's **volumes** section so the container has access to them:
 
 ```
       - "./setup-msmtp.sh:/etc/cont-init.d/99-setup-msmtp.sh:ro"
