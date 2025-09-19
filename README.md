@@ -49,7 +49,7 @@ Navigate to your JDownloader container's address and enter **Settings** then **E
 
 Install the **Event Scripter** Extension and restart your container. You should now see a new **Event Scripter** tab at the bottom of the Settings scrollbar.
 
-Enter Event Scripter and click **Add**. You can click to enter a name, and set the Trigger to **Package Finished**. Don't forget to click the checkmark on the left to enable the scripter.
+Enter Event Scripter and click **Add**. You can click to enter a name, and set the Trigger to **Package Finished**. Don't forget to click the checkmark on the left to enable the script.
 
 Inside of the Script Editor, enter the following:
 
